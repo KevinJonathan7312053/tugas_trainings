@@ -1,0 +1,12 @@
+class MainMenu
+
+  def self.input
+
+  puts "================="
+  puts "Welcome to Battle Arena"
+  puts "-----------------"
+  puts "masukkan nama player : "
+  end
+end
+
+main.input

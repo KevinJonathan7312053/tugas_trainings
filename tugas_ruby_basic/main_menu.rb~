@@ -1,0 +1,54 @@
+require "./player.rb"
+
+class MainMenu
+  @players = Array.new
+  def self.interface
+    puts "========================================="
+    puts "	Welcome to Battle Arena"
+    puts "-----------------------------------------"
+    puts "Description :"
+    puts "1. Ketik 'new' untuk membuat karakter"
+    puts "2. Ketik 'start' untuk memulai pertaungan"
+    puts "------------------------------------------"
+    @n = 0
+    puts "Current Player"
+    while @n < @players.count
+      n = n + 1
+      puts @players [n]
+    end
+    puts "* min player 2, max player 3"
+  end
+
+  def self.getInput
+  
+    @input = get.chomp
+    @ct = 0
+
+    while @ct>0
+      if @input.eql? "new"
+       @name = get.chomp
+       @@players.push Player.new @name
+   
+      elsif @input.eql? "start"
+        if @@players.count<2
+          puts "Pemain kurang"
+
+        elsif @@players >3
+          puts "Pemain kebanyakan"
+        else 
+          @ct = 1
+          MainMenu.play
+        end
+      else
+        puts "input salah"
+      end
+    end
+  end
+ 
+  def self.play
+    puts "tes"
+  end
+end
+
+MainMenu.getInput
+MainMenu.interface
